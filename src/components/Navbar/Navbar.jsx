@@ -1,43 +1,36 @@
-import React from 'react'
-import './Navbar.css'
-import logo from '../../assets/logo.png'
-import arrow_icon from '../../assets/arrow_icon.png'
-import { useContext } from 'react';
+import React, { useContext } from 'react';
+import './Navbar.css';
+import logo from '../../assets/logo.png';
+import arrow_icon from '../../assets/arrow_icon.png';
 import { CoinContext } from '../../context/CoinContext';
-
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-
-    const {setCurrency} = useContext(CoinContext);
+    const { setCurrency } = useContext(CoinContext);
 
     const currencyHandler = (event) => {
-        switch (event.target.value) {   
-            case 'usd': {
-                setCurrency({name: 'usd', symbol: '$'});
+        switch (event.target.value) {
+            case 'usd':
+                setCurrency({ name: 'usd', symbol: '$' });
                 break;
-            }
-            case 'eur': {
-                setCurrency({name: 'eur', symbol: '€'});
+            case 'eur':
+                setCurrency({ name: 'eur', symbol: '€' });
                 break;
-            }
-            case 'pln': {
-                setCurrency({name: 'pln', symbol: 'zł'});
+            case 'pln':
+                setCurrency({ name: 'pln', symbol: 'zł' });
                 break;
-            }
-            default: {
-                setCurrency({name: 'usd', symbol: '$'});
-                break;
-            }
-                
+            default:
+                setCurrency({ name: 'usd', symbol: '$' });
         }
-    }
-
+    };
 
     return (
         <div className='navbar'>
-            <img className='logo' src={logo} alt="" />
+            <Link to='/'>
+                <img className='logo' src={logo} alt="Logo" />
+            </Link>
             <ul>
-                <li>Home</li>
+                <Link to='/'><li>Home</li></Link>
                 <li>Features</li>
                 <li>Pricing</li>
                 <li>Blog</li>
@@ -48,10 +41,10 @@ const Navbar = () => {
                     <option value="eur">EUR</option>
                     <option value="pln">PLN</option>
                 </select>
-                <button>Sign Up <img src={arrow_icon} alt="" /></button>
+                <button>Sign Up <img src={arrow_icon} alt="Arrow Icon" /></button>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Navbar
+export default Navbar;

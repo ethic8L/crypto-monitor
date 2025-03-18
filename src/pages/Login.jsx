@@ -1,9 +1,9 @@
-import styles from './SignUp.css';
+import styles from './Login.module.css';
 import axios from 'axios';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const SignUp = () => {
+const Login = () => {
   const [data, setData] = useState({
     email: '',
     password: '',
@@ -33,26 +33,19 @@ const SignUp = () => {
   return (
     <div className={styles.login_container}>
       <div className={styles.login_form_container}>
-        <div className={styles.left}>
         <form className={styles.form_container} onSubmit={handleSubmit}>
-            <h1>Login to your account</h1>
-            <input type='email' placeholder='Email' name='email' onChange={handleChange} value={data.email} required className={styles.input} />
-            <input type='password' placeholder='Password' name='password' onChange={handleChange} value={data.password} required className={styles.input} />
-            {error && <div className={styles.error_msg}>{error}</div>}
-            <button type='submit' className={styles.green_btn}>Sign In</button>
+          <h1>Login</h1>
+          <input type="email" placeholder="Email" name="email" onChange={handleChange} value={data.email} required className={styles.input} />
+          <input type="password" placeholder="Password" name="password" onChange={handleChange} value={data.password} required className={styles.input} />
+          {error && <div className={styles.error_msg}>{error}</div>}
+          <button type="submit" className={styles.green_btn}>Login</button>
         </form>
-
-
-        </div>
-        <div className={styles.right}>
-        <h1>New here?</h1>
-            <Link to='/signup'>
-              <button type='button' className={styles.white_btn}>Sign Up</button>
-            </Link>
+        <div className={styles.redirect}>
+          <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
         </div>
       </div>
     </div>
   );
 };
 
-export default SignUp;
+export default Login;

@@ -5,8 +5,9 @@ import Home from './pages/Home/Home';
 import Coin from './pages/Coin/Coin';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
-import Login from './pages/Login';
-import SignUp from './pages/SignUp';
+import Login from './pages/Auth/login/Login';
+import Signup from './pages/Auth/signup/Signup';
+
 
 
 
@@ -15,11 +16,11 @@ const App = () => {
     <div className='app'>
       <Navbar />
       <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Signup />} />
         <Route path="/" element={<Home />} />
         <Route path="/coin/:coinId" element={<Coin />} />
         <Route path="/news" element={<News />} /> 
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
       </Routes>
       <Footer />
     </div>

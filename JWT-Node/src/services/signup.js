@@ -1,4 +1,4 @@
-import User from '../models/user';
+import User from '../models/user.js';
 import bcrypt from 'bcryptjs';
 
 async function createUser(userData){
@@ -15,4 +15,4 @@ async function createUser(userData){
     return savedUser;
 }
 
-export default createUser;
+export default { createUser };

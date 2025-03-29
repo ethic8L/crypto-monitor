@@ -1,4 +1,4 @@
-import mongoose from '../configuration/dbConfig';
+import mongoose from '../configuration/dbConfig.js';
 
 const userSchema = new mongoose.Schema({
     name: String,

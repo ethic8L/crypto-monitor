@@ -1,5 +1,6 @@
 import express from 'express';
 import signupRoute from './routes/signup.js';
+import loginRoute from './routes/login.js';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 const app = express();
@@ -14,6 +15,7 @@ app.use(cors());
 createAdminAccount();
 
 app.use('/user', signupRoute);
+app.use('/auth', loginRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is running on: http://localhost:${PORT}`);

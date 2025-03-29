@@ -9,8 +9,6 @@ import Login from './pages/Auth/login/Login';
 import Signup from './pages/Auth/signup/Signup';
 
 
-
-
 const App = () => {
   return (
     <div className='app'>

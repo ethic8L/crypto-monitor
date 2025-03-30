@@ -33,6 +33,14 @@
     align-items: center;
     gap: max(1vw, 12px);
 }
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 27px;
+}
+
 .navbar select{
     cursor: pointer;
     padding: 5px 8px;

@@ -28,6 +28,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 
 
+// eslint-disable-next-line no-undef
 const PORT = process.env.PORT || 5006;
 
 app.use(bodyParser.json());

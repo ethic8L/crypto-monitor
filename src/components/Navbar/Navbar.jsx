@@ -29,7 +29,7 @@ const Navbar = () => {
             <Link to='/'>
                 <img className='logo' src={logo} alt="Logo" />
             </Link>
-            <ul>
+            <ul className='nav-links'>
                 <Link to='/'><li>Home</li></Link>
                 <Link to='/news'><li>News</li></Link>
             </ul>
